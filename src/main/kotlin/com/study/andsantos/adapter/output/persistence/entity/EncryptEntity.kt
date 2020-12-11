@@ -1,4 +1,4 @@
-package com.study.andsantos.adapter.output.persistence
+package com.study.andsantos.adapter.output.persistence.entity
 
 import javax.persistence.Column
 import javax.persistence.EmbeddedId

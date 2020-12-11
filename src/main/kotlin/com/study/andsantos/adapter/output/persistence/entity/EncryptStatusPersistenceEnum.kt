@@ -1,4 +1,4 @@
-package com.study.andsantos.adapter.output.persistence
+package com.study.andsantos.adapter.output.persistence.entity
 
 enum class EncryptStatusPersistenceEnum(val encryptStatusEnum: String) {
     NEW("new"),

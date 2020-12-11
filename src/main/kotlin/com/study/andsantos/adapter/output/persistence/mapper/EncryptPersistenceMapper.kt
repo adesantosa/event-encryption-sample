@@ -1,19 +1,25 @@
 package com.study.andsantos.adapter.output.persistence.mapper
 
-import com.study.andsantos.adapter.output.persistence.EncryptEntity
-import com.study.andsantos.adapter.output.persistence.EncryptKeyEntity
-import com.study.andsantos.adapter.output.persistence.EncryptStatusPersistenceEnum
+import com.study.andsantos.adapter.output.persistence.entity.EncryptEntity
+import com.study.andsantos.adapter.output.persistence.entity.EncryptKeyEntity
+import com.study.andsantos.adapter.output.persistence.entity.EncryptStatusPersistenceEnum
 import com.study.andsantos.application.domain.Encrypt
+import com.study.andsantos.application.domain.EncryptStatusDomainEnum
 
-class EncryptPersistenceMapper {
 
-    fun toEncryptEntity(encrypt: Encrypt) = EncryptEntity(
-            id = EncryptKeyEntity(
-                    encryptId = encrypt.id,
-                    encryptStatusPersistence =
-                    EncryptStatusPersistenceEnum.valueOf(encrypt.encryptStatusDomain.name)),
-            userId = encrypt.userId,
-            name = encrypt.name
-    )
+fun Encrypt.toEncryptEntity() = EncryptEntity(
+        id = EncryptKeyEntity(
+                encryptId = this.id,
+                encryptStatusPersistence =
+                EncryptStatusPersistenceEnum.valueOf(this.encryptStatusDomain.name)),
+        userId = this.userId,
+        name = this.name
+)
 
-}
+fun EncryptEntity.toEncryptDomain() = Encrypt(
+        id = this.id.encryptId,
+        userId = this.userId,
+        name = this.name,
+        encryptStatusDomain = EncryptStatusDomainEnum.valueOf(this.id.encryptStatusPersistence.name)
+)
+

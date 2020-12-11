@@ -1,4 +1,4 @@
-package com.study.andsantos.adapter.output.persistence
+package com.study.andsantos.adapter.output.persistence.entity
 
 import java.io.Serializable
 import javax.persistence.Column

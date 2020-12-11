@@ -1,4 +1,10 @@
 package com.study.andsantos.adapter.input.kafka.user
 
-class UserConsumer {
+import org.springframework.stereotype.Component
+
+@Component
+class UserConsumer(
+        //
+) {
+
 }
