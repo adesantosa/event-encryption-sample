@@ -4,7 +4,9 @@ import com.study.andsantos.adapter.output.persistence.mapper.toEncryptDomain
 import com.study.andsantos.adapter.output.persistence.mapper.toEncryptEntity
 import com.study.andsantos.application.domain.Encrypt
 import com.study.andsantos.application.port.output.SaveUserPersistencePort
+import org.springframework.stereotype.Component
 
+@Component
 class EncryptPersistenceAdapter(
         private val encryptRepository: EncryptRepository
 ) : SaveUserPersistencePort {

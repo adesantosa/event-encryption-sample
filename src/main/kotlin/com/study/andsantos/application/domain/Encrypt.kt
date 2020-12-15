@@ -6,8 +6,8 @@ data class Encrypt(
 
         val name: String,
 
-        val userId: String,
+        val userId: String = "",
 
-        val encryptStatusDomain: EncryptStatusDomainEnum
+        val encryptStatusDomain: EncryptStatusDomainEnum = EncryptStatusDomainEnum.NEW
 
 )

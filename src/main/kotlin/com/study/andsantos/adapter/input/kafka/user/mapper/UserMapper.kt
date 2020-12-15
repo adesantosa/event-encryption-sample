@@ -12,4 +12,9 @@ class UserMapper {
             name = event.name
     )
 
+    fun toEncrypt(userEvent: UserEvent) = Encrypt(
+            id = userEvent.id,
+            name = userEvent.name
+    )
+
 }
