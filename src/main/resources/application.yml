@@ -1,5 +1,18 @@
+server:
+  port: 8084
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+  cloud:
+    stream:
+      function:
+        definition: userCreatedConsumer
+        bindings:
+          userCreatedConsumer-in-0: 'user-created-consumer'
+      bindings:
+        userCreatedConsumer-in-0:
+          destination: 'user-topic'
+          consumer:
+            concurrency: 1
+            max-attempts: 5
+      kafka:
+        binder:
+          brokers: 'localhost:9092'

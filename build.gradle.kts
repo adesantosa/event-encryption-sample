@@ -17,6 +17,8 @@ repositories {
 }
 
 extra["springCloudVersion"] = "Hoxton.SR9"
+val loggingVersion = "1.7.8"
+val javaFakerVersion = "1.0.2"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -24,6 +26,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+	implementation("io.github.microutils:kotlin-logging:$loggingVersion")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
@@ -37,6 +40,7 @@ dependencies {
 	}
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
+	testImplementation("com.github.javafaker:javafaker:$javaFakerVersion")
 }
 
 dependencyManagement {
