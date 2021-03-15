@@ -8,13 +8,10 @@ import javax.persistence.Table
 @Entity
 @Table(name = "encrypt")
 data class EncryptEntity(
-        @EmbeddedId
+    @EmbeddedId
         val id: EncryptKeyEntity,
 
-        @Column
-        val userId: String,
-
-        @Column
+    @Column
         val name: String
 
 )

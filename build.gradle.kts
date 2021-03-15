@@ -19,6 +19,7 @@ repositories {
 extra["springCloudVersion"] = "Hoxton.SR9"
 val loggingVersion = "1.7.8"
 val javaFakerVersion = "1.0.2"
+val bouncycastle = "1.68"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -33,6 +34,8 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-stream")
 	implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka")
 	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.bouncycastle:bcprov-jdk15to18:$bouncycastle")
+
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("mysql:mysql-connector-java")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

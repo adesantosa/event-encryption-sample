@@ -1,9 +1,8 @@
 package com.study.andsantos.adapter.input.kafka.user
 
-import com.study.andsantos.EventEncryptionSampleApplicationTests
-import com.study.andsantos.adapter.output.persistence.EncryptPersistenceAdapter
+import com.study.andsantos.integration.IntegrationTests
 import com.study.andsantos.adapter.output.persistence.EncryptRepository
-import com.study.andsantos.consumer.UserConsumerEvent
+import com.study.andsantos.integration.consumer.UserConsumerEvent
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
@@ -12,7 +11,7 @@ class UserConsumerTest(
     private val userConsumerEvent: UserConsumerEvent,
     @Autowired
     private val encryptRepository: EncryptRepository
-) : EventEncryptionSampleApplicationTests() {
+) : IntegrationTests() {
 
     @Test
     fun `Should consumer an event and save it`() {

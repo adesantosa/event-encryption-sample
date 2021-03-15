@@ -12,13 +12,11 @@ fun Encrypt.toEncryptEntity() = EncryptEntity(
                 encryptId = this.id,
                 encryptStatusPersistence =
                 EncryptStatusPersistenceEnum.valueOf(this.encryptStatusDomain.name)),
-        userId = this.userId,
         name = this.name
 )
 
 fun EncryptEntity.toEncryptDomain() = Encrypt(
         id = this.id.encryptId,
-        userId = this.userId,
         name = this.name,
         encryptStatusDomain = EncryptStatusDomainEnum.valueOf(this.id.encryptStatusPersistence.name)
 )

@@ -1,4 +1,4 @@
-package com.study.andsantos.consumer
+package com.study.andsantos.integration.consumer
 
 import com.github.javafaker.Faker
 import com.study.andsantos.adapter.input.kafka.user.UserConsumer
